@@ -11,14 +11,10 @@ counter.onclick = function(){
                 count.innerHTML=counter;
             }
         }
-    }
-    request.open(GET,"localhost:8080/counter","true");
-    reuest.send(null);
-}
-
-var nameInput = document.getElementById("name_box");
-var name = nameInout.value;
-
+    };
+    request.open('GET','http://localhost:8080/counter',true);
+    request.send(null);
+};
 var submit = document.getElementById("submit_box");
 submit.onclick =  function(){
      var request = new XMLHttpRequest();
@@ -28,15 +24,19 @@ submit.onclick =  function(){
             if(request.status == 200){
                 var names = request.responseText;
                 names = JSON.parse(names);
-                var list= [];
-                for (var i=0;i < names.lenghth;i++){
+                var list= '';
+                for (var i=0;i < names.length;i++){
                     list += '<li>' + names[i] + '</li>';
                 }
                 var ul = document.getElementById("listnames");
                 ul.innerHTML = list;
             }
         }
-    }
-    request.open(GET,"localhost:8080/counter","true");
-    reuest.send(null);
-}
+    };
+	
+	var nameInput = document.getElementById("name_box");
+	var name = nameInput.value;
+
+    request.open('GET','http://localhost:8080/submit-name?name='+name,true);
+    request.send(null);
+};
