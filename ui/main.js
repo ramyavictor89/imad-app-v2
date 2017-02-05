@@ -20,14 +20,22 @@ var name = nameInout.value;
 
 var submit = document.getElementById("submit_box");
 submit.onclick =  function(){
+     var request = new XMLHttpRequest();
     
-    
-    
-    var names = ['name1', 'name2', 'name3'];
-    var list= [];
-    for (var i=0;i < names.lenghth;i++){
-        list = '<li>' + names[i] + '</li>';
+    request.onreadystatechange = function(){
+        if(request.readystate == XMLHttpRequest.Done){
+            if(request.status == 200){
+                var names = request.responseText;
+                names = JSON.parse(names);
+                var list= [];
+                for (var i=0;i < names.lenghth;i++){
+                    list += '<li>' + names[i] + '</li>';
+                }
+                var ul = document.getElementById("listnames");
+                ul.innerHTML = list;
+            }
+        }
     }
-    var ul = document.getElementById("listnames");
-    ul.innerHTML = list;
+    request.open(GET,"localhost:8080/counter","true");
+    reuest.send(null);
 }
