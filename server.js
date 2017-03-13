@@ -94,7 +94,7 @@ app.get('/counter',function(req,res){
 });
 
 var names = [];
-function hash(input){
+function hash(input,salt){
     var hashed = crypto.pbkdf2(input,salt,1000,512,'sha512');
     return hashed.toString('hex');
 }
