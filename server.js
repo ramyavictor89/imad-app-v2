@@ -96,7 +96,7 @@ app.get('/counter',function(req,res){
 var names = [];
 function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
-    return[pbkdf, salt, 10000,hashed.toString('hex')];
+    return["pbkdf", "salt", 10000,hashed.toString('hex')].join('$');
 }
 app.get('/hash/:input', function (req, res) {
     var hashedString = hash(req.params.input,'this-is-some-random-string');
