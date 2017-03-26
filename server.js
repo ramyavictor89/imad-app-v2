@@ -9,9 +9,9 @@ app.use(morgan('combined'));
 
 var config = {
   host: 'db.imad.hasura-app.io',
+  database: 'ramyavictor89',
   user: 'ramyavictor89',
   password: process.env.DB_PASSWORD,
-  database: 'ramyavictor89',
   port : '5432'
 };
 
