@@ -16,49 +16,6 @@ var config = {
 };
 
 
-var articles = {
-    'article-one' : {
-        title : 'Article 1 | ramya victor',
-        heading : 'Article 1',
-        date : '5th Feb 2017',
-        content : `
-                <p>
-                This is the first article to be displayed on the webpage.
-                Isn't this a great think to admire???
-                </p>
-                <p>
-                    Yipee... Yahoo... All are the expressions of joy...
-                </p>`
-        
-    },
-    'article-two' : {
-        title : 'Article 2 | ramya victor',
-        heading : 'Article 2',
-        date : '9th Feb 2017',
-        content : `
-                <p>
-                This is the second article to be displayed on the webpage.
-                Isn't this a great think to admire???
-                </p>
-                <p>
-                    Yipee... Yahoo... All are the expressions of joy...
-                </p>`
-    },
-     'article-three' : {
-        title : 'Article 3 | ramya victor',
-        heading : 'Article 3',
-        date : '12th Feb 2017',
-        content : `
-                <p>
-                This is the third article to be displayed on the webpage.
-                Isn't this a great think to admire???
-                </p>
-                <p>
-                    Yipee... Yahoo... All are the expressions of joy...
-                </p>`
-    }
-}
-
 function createTemplate(data){
     
     var title = data.title;
